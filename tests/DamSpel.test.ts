@@ -29,7 +29,7 @@ describe('DamSpel', () => {
 
     test('should switch players after a valid move', () => {
         game.movePiece({ row: 6, col: 1 }, { row: 5, col: 2 });
-        expect(game.getCurrentPlayer()).toBe('Z'); // Black’s turn after White’s move
+        expect(game.getCurrentPlayer()).toBe('ZWART'); // Black’s turn after White’s move
     });
 
     test('should prevent moving opponent’s pieces', () => {
@@ -47,7 +47,7 @@ describe('DamSpel', () => {
         expect(game.getCurrentPlayer()).toBe('WIT');
         expect(game.movePiece({ row: 5, col:4 }, { row: 4, col: 5})).toBe(true);
         expect(game.getCurrentPlayer()).toBe('ZWART');
-        expect(game.movePiece({ row: 4, col:1 }, { row: 5, col: 0})).toBe(true);
-        console.log(game.getBoard())
+        // TODO: implementatie detectie voor slaan mogelijkheid
+        expect(game.movePiece({ row: 4, col:1 }, { row: 5, col: 0})).toBe(false);
     })
 });
